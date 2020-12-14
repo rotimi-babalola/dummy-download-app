@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const handleClick = () => {
+    window.location.href = "ADD_DOWNLOAD_URL_FROM_S3_HERE";
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +18,14 @@ function App() {
         >
           Learn React
         </a>
+        <a
+          href="https://file-examples-com.github.io/uploads/2017/02/file_example_XLS_10.xls"
+          download="file_example_XLS_10.xls"
+          class="btn btn-orange btn-outline btn-xl page-scroll download-button"
+        >
+          Download sample xls file
+        </a>
+        <button onClick={handleClick}>Click to download file</button>
       </header>
     </div>
   );
