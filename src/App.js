@@ -1,10 +1,28 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
   const handleClick = () => {
-    window.location.href = "ADD_DOWNLOAD_URL_FROM_S3_HERE";
+    window.location.href =
+      "https://file-examples-com.github.io/uploads/2017/02/file_example_XLS_10.xls";
   };
+
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      const confirmation =
+        "Are you sure you want to leave this page? All changes will be lost!";
+      e.returnValue = confirmation;
+
+      return e;
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <div className="App">

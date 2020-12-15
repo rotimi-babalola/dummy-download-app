@@ -1,0 +1,20 @@
+{
+  "browsers": ["chrome", "firefox"],
+  "src": ["e2e/tests"],
+  "reporter": [
+    {
+      "name": "spec"
+    }
+  ],
+  "screenshots": {
+    "path": "reports/screenshots/",
+    "takeOnFails": true,
+    "pathPattern": "${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png"
+  },
+  "quarantineMode": false,
+  "selectorTimeout": 15000,
+  "assertionTimeout": 15000,
+  "pageLoadTimeout": 30000,
+  "tsConfigPath": "e2e/tsconfig.json",
+  "skipJsErrors": false
+}
