@@ -11,7 +11,7 @@ const downloadedFileExists = async (downloadLocation, fileName) => {
 test("Should download a file", async () => {
   t.setNativeDialogHandler(() => true);
   const downloadLink = Selector("button").withText("Click to download file");
-  const fileName = "E2E.png";
+  const fileName = "file_example_XLS_10.xls";
   const downloadLocation = downloadsFolder();
 
   // click download button
